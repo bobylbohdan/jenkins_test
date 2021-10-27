@@ -1,0 +1,1 @@
+python -m pytest --cov=lib /Users/bohdanbobyl/Training/univ/jenkins/project_template/tests
