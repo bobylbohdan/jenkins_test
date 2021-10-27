@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Setup python') {
             steps {
-                ls -la
+                sh "python -v"
             }
         }
         stage('Test') {
