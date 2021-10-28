@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building..."
+                sh "ls -la && \
+                    python3 -v && \
+                    pip3 -v"
             }
         }
         stage('Test') {
