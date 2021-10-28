@@ -4,19 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "ls -la && \
-                    python3 -v && \
-                    pip3 -v"
+                sh "pip3 install -r requirements.txt"
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
+                sh "python3 -m pytest --cov=lib ./tests"
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                sh "python3 __main__.py"
             }
         }
     }
